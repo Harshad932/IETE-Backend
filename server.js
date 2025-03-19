@@ -143,7 +143,7 @@ app.post("/admin/forgotPassword",async (req,res)=>
     await user.save();
 
     // Send email with the reset token
-    const resetLink = `http://localhost:3000/reset-password?token=${resetToken}`;
+    const resetLink = `http://localhost:3000/admin/resetpassword?token=${resetToken}`;
     await transporter.sendMail({
       to: user.email,
       subject: 'Password Reset Request',
